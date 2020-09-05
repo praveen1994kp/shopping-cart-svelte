@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "App.svelte",
+    "Cart.svelte",
+    "Counter.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\timport Cart from \"./Cart.svelte\";\n</script>\n\n<main>\n\t<h1>Cart - With Svelte</h1>\n\t<Cart />\n</main>\n\n<style>\n    h1 {\n        text-align: center;\n    }\n\tmain {\n\t\tpadding: 1em;\n\t}\n</style>",
+    "<script>\n    import Counter from \"./Counter.svelte\";\n    let items = [\n        {id: 1, name: \"Wireless Keyboard\", count: 0, price: 670},\n        {id: 2, name: \"LG 4k Curved Monitor\", count: 0, price: 39000},\n        {id: 3, name: \"Nvidia RTX 3078\", count: 0, price: 32000},\n        {id: 4, name: \"256GB nVme SSD\", count: 0, price: 4000}\n    ]\n\n</script>\n\n<div class=\"container\">\n    <ul>\n        <li><h4>Item</h4><h4>Count</h4><h4>Price</h4></li>\n        {#each items as item (item.id)}\n            <li>\n                <span>{item.name}: </span>\n                <Counter bind:count={item.count} />\n                <span>&#8360;. {item.price.toFixed(2)}</span>\n            </li>\n        {/each}\n    </ul>\n</div>\n\n<style>\n    .container {\n        max-width: 1200px;\n        width: 80%;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        box-shadow: 3px 0px 17px #888888;\n        margin: auto\n    }\n    ul {\n        list-style: none;\n        width: 100%;\n    }\n    li {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n    }\n\n    li > * {\n        width: 50%;\n        flex-grow: 1;\n        margin: 1rem;\n    }\n</style>",
+    "<script>\n    export let count = 0;\n    function handleIncrementClick() {\n        count += 1;\n    }\n    function handleDecrementClick() {\n        if(count > 0) {\n            count -=1;\n        }\n    }\n</script>\n<div>\n    <button on:click={handleDecrementClick}>-</button>\n    <span>{count}</span>\n    <button on:click={handleIncrementClick}>+</button>\n</div>\n\n<style>\n    button {\n        padding: .8rem;\n        margin: .3rem;\n        border-radius: .2rem;\n        cursor: pointer;\n    }\n    div {\n        flex-grow: 1;\n        width: 50%;\n        margin: 1rem;\n    }\n</style>"
+  ],
+  "names": [],
+  "mappings": "AAUI,EAAE,eAAC,CAAC,AACA,UAAU,CAAE,MAAM,AACtB,CAAC,AACJ,IAAI,eAAC,CAAC,AACL,OAAO,CAAE,GAAG,AACb,CAAC;ACUE,UAAU,4BAAC,CAAC,AACR,SAAS,CAAE,MAAM,CACjB,KAAK,CAAE,GAAG,CACV,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,MAAM,CACvB,UAAU,CAAE,GAAG,CAAC,GAAG,CAAC,IAAI,CAAC,OAAO,CAChC,MAAM,CAAE,IAAI;IAChB,CAAC,AACD,EAAE,4BAAC,CAAC,AACA,UAAU,CAAE,IAAI,CAChB,KAAK,CAAE,IAAI,AACf,CAAC,AACD,EAAE,4BAAC,CAAC,AACA,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,WAAW,CAAE,MAAM,AACvB,CAAC,AAED,gBAAE,CAAG,cAAE,CAAC,AACJ,KAAK,CAAE,GAAG,CACV,SAAS,CAAE,CAAC,CACZ,MAAM,CAAE,IAAI,AAChB,CAAC;AC9BD,MAAM,cAAC,CAAC,AACJ,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,KAAK,CACb,aAAa,CAAE,KAAK,CACpB,MAAM,CAAE,OAAO,AACnB,CAAC,AACD,GAAG,cAAC,CAAC,AACD,SAAS,CAAE,CAAC,CACZ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,IAAI,AAChB,CAAC"
+}
