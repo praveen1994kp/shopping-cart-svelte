@@ -1,3 +1,5 @@
+Deployed [here](https://shopping-cart-svelte-git-master.praveen1994kp.vercel.app/)
+
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
