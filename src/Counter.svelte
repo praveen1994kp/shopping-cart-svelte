@@ -17,14 +17,9 @@
 
 <style>
     button {
-        padding: .8rem;
-        margin: .3rem;
-        border-radius: .2rem;
+        padding: .5rem;
+        margin: .1rem;
+        border-radius: .4rem;
         cursor: pointer;
-    }
-    div {
-        flex-grow: 1;
-        width: 50%;
-        margin: 1rem;
     }
 </style>

@@ -11,12 +11,11 @@
 
 <div class="container">
     <ul>
-        <li><h4>Item</h4><h4>Count</h4><h4>Price</h4></li>
+        <li><h4>Item</h4><h4>Count</h4></li>
         {#each items as item (item.id)}
             <li>
                 <span>{item.name}: </span>
                 <Counter bind:count={item.count} />
-                <span>&#8360;. {item.price.toFixed(2)}</span>
             </li>
         {/each}
     </ul>
@@ -24,27 +23,33 @@
 
 <style>
     .container {
-        max-width: 1200px;
-        width: 80%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 3px 0px 17px #888888;
-        margin: auto
-    }
-    ul {
-        list-style: none;
-        width: 100%;
-    }
-    li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        margin: 0 auto;
+        min-width: 15em;
+        width: 60%;
+        line-height: 1.1;
     }
 
-    li > * {
-        width: 50%;
-        flex-grow: 1;
-        margin: 1rem;
+    ul {
+        list-style-type: none;
+        padding: 0 .3em;
+        margin: 0;
+    }
+
+    li {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        border-bottom: .1em solid #cacaca;
+        padding: .8em 0;
+    }
+    h4 {
+        text-align: center;
+        width: 100%;
+    }
+    span {
+        width: 100%;
+        text-align: right;
+        font-size: .95em;
     }
 </style>

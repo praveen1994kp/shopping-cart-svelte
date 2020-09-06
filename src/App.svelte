@@ -8,6 +8,9 @@
 </main>
 
 <style>
+	:global(body) {
+		padding: 0;
+	}
     h1 {
         text-align: center;
     }
